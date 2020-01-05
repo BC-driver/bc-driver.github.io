@@ -46,27 +46,31 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="BC_driver&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="矩阵加速是一种能将复杂度为$\Theta(n)$的递推式加速到$\Theta(k^3logn)$的方法(k为加速矩阵的大小) 1.原理 ​    假设我们有一满足递推关系的数列$\{a_i\}$,已知其前$k$项(其中$k$就是加速矩阵的大小,具体为什么后面有解释)$\{a_1,a_2\cdots a_k\}$ ​    要想求出$a_{k+1}$,我们可以构造出这样一个大小为$k\times k">
+<meta property="og:type" content="article">
+<meta property="og:title" content="矩阵加速">
+<meta property="og:url" content="http://yoursite.com/2019/12/31/%E7%9F%A9%E9%98%B5%E5%8A%A0%E9%80%9F/index.html">
 <meta property="og:site_name" content="BC_driver&#39;s Blog">
+<meta property="og:description" content="矩阵加速是一种能将复杂度为$\Theta(n)$的递推式加速到$\Theta(k^3logn)$的方法(k为加速矩阵的大小) 1.原理 ​    假设我们有一满足递推关系的数列$\{a_i\}$,已知其前$k$项(其中$k$就是加速矩阵的大小,具体为什么后面有解释)$\{a_1,a_2\cdots a_k\}$ ​    要想求出$a_{k+1}$,我们可以构造出这样一个大小为$k\times k">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-12-31T09:21:18.000Z">
+<meta property="article:modified_time" content="2020-01-05T06:56:22.242Z">
 <meta property="article:author" content="BC_driver">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="http://yoursite.com/2019/12/31/%E7%9F%A9%E9%98%B5%E5%8A%A0%E9%80%9F/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false
+    isHome: false,
+    isPost: true
   };
 </script>
 
-  <title>BC_driver's Blog</title>
+  <title>矩阵加速 | BC_driver's Blog</title>
   
 
 
@@ -172,10 +176,10 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/31/%E7%9F%A9%E9%98%B5%E5%8A%A0%E9%80%9F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -189,8 +193,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/31/%E7%9F%A9%E9%98%B5%E5%8A%A0%E9%80%9F/" class="post-title-link" itemprop="url">矩阵加速</a>
+          矩阵加速
         </h1>
 
         <div class="post-meta">
@@ -221,7 +224,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>矩阵加速是一种能将复杂度为$\Theta(n)$的递推式加速到$\Theta(k^3logn)$的方法(k为加速矩阵的大小)</p>
+        <p>矩阵加速是一种能将复杂度为$\Theta(n)$的递推式加速到$\Theta(k^3logn)$的方法(k为加速矩阵的大小)</p>
 <p><strong>1.原理</strong></p>
 <p>​    假设我们有一满足递推关系的数列$\{a_i\}$,已知其前$k$项(其中$k$就是<strong>加速矩阵的大小</strong>,具体为什么后面有解释)$\{a_1,a_2\cdots a_k\}$</p>
 <p>​    要想求出$a_{k+1}$,我们可以构造出这样一个大小为$k\times k$的矩阵$A$使其满足</p>
@@ -345,355 +348,33 @@ A^4=
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">long</span> <span class="keyword">long</span> mod = <span class="number">1000000007</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">mat</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> m[<span class="number">5</span>][<span class="number">5</span>];</span><br><span class="line">&#125;a,e;</span><br><span class="line"></span><br><span class="line"><span class="function">mat <span class="title">multi</span><span class="params">(mat a,mat b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	mat c;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">2</span>;i++)</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=<span class="number">2</span>;j++)</span><br><span class="line">			c.m[i][j]=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">2</span>;i++)</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=<span class="number">2</span>;j++)</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">1</span>;k&lt;=<span class="number">2</span>;k++)</span><br><span class="line">				c.m[i][j]=c.m[i][j]%mod+a.m[i][k]*b.m[k][j]%mod;</span><br><span class="line">	<span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">mat <span class="title">ksm</span><span class="params">(mat x,<span class="keyword">long</span> <span class="keyword">long</span> p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	mat res=e;</span><br><span class="line">	<span class="keyword">while</span>(p)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(p&amp;<span class="number">1</span>)</span><br><span class="line">			res=multi(res,a);</span><br><span class="line">		a=multi(a,a);</span><br><span class="line">		p&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> n,m;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	a.m[<span class="number">1</span>][<span class="number">1</span>]=<span class="number">0</span>; a.m[<span class="number">1</span>][<span class="number">2</span>]=<span class="number">1</span>;</span><br><span class="line">	a.m[<span class="number">2</span>][<span class="number">1</span>]=<span class="number">1</span>; a.m[<span class="number">2</span>][<span class="number">2</span>]=<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">2</span>;i++)</span><br><span class="line">		e.m[i][i]=<span class="number">1</span>;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">if</span>(n==<span class="number">1</span>||n==<span class="number">2</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	init();</span><br><span class="line">	mat res=ksm(a,n);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,res.m[<span class="number">1</span>][<span class="number">2</span>]%mod);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>​    </p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/28/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="BC_driver">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BC_driver's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/28/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/" class="post-title-link" itemprop="url">Matrix fast power</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2019-12-28 19:40:48 / Modified: 20:59:48" itemprop="dateCreated datePublished" datetime="2019-12-28T19:40:48+08:00">2019-12-28</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><strong>1.</strong>矩阵快速幂<br>    <strong>1.1</strong> 矩阵基础<br>        <strong>1.1.1</strong> 矩阵<br>             在数学中，矩阵（Matrix）是一个按照长方阵列排列的复数或实数集合 ———-百度百科</p>
-<p>​        <strong>1.1.2</strong> 矩阵加/减法</p>
-<p>​            矩阵的加法和正常数字的加法很是类似</p>
-<script type="math/tex; mode=display">
-\left[
-\begin{matrix}
-1&2 \\
-3&4
-\end{matrix}
-\right]
-+
-\left[
-\begin{matrix}
-4&3 \\
-2&1
-\end{matrix}
-\right]
-=
-\left[
-\begin{matrix}
-1+2&2+3 \\
-3+2&4+1
-\end{matrix}
-\right]
-=
-\left[
-\begin{matrix}
-5&5 \\
-5&5
-\end{matrix}
-\right]</script><script type="math/tex; mode=display">
-\left[
-\begin{matrix}
-5&5 \\
-5&5
-\end{matrix}
-\right]
--
-\left[
-\begin{matrix}
-4&3 \\
-2&1
-\end{matrix}
-\right]
-=
-\left[
-\begin{matrix}
-5-4&5-3 \\
-5-2&5-1
-\end{matrix}
-\right]
-=
-\left[
-\begin{matrix}
-1&2 \\
-3&4
-\end{matrix}
-\right]</script><p>​        <strong>1.1.3</strong>矩阵数乘</p>
-<p>​            数乘(注意哦,是数乘)是指一个矩阵与一个数相乘,方法就是把矩阵里的每一个元素都乘以该数</p>
-<script type="math/tex; mode=display">
-3
-\times
-\left[
-\begin{matrix}
-4&3 \\
-2&1
-\end{matrix}
-\right]
-=
-\left[
-\begin{matrix}
-3*4&3*3 \\
-3*2&3*1
-\end{matrix}
-\right]
-=
-\left[
-\begin{matrix}
-12&9 \\
-6&3
-\end{matrix}
-\right]</script><p>​        <strong>1.1.4</strong>矩阵乘法</p>
-<p>​            矩阵乘法,笔者一开始只看到了它的公式,如下</p>
-<script type="math/tex; mode=display">
-C_{ij}=\sum_{k=1}^{n}A_{ik}\times B_{kj}</script><p>​            其中A,B能乘的条件是<strong>A</strong>的<strong>列数</strong>等于<strong>B</strong>的<strong>行数</strong></p>
-<p>​            如$A=m\times n,B=n\times k$时可乘</p>
-<p>​            但是由于它实在是太抽象(明明是你自己太蠢),笔者花了好长时间还是没有理解,直到我看到了这样一句话</p>
-<p>​            <strong><em>矩阵最初的目的，只是为线性方程组提供一个简写形式</em></strong></p>
-<p>​            突然茅塞顿开</p>
-<p>​            我们看这样一个式子</p>
-<script type="math/tex; mode=display">
-\left[
-\begin{matrix}
-4&3 \\
-2&1
-\end{matrix}
-\right]
-\times
-\left[
-\begin{matrix}
-2 \\
-5
-\end{matrix}
-\right]
-=
-\left[
-\begin{matrix}
-23 \\
-9
-\end{matrix}
-\right]</script><p>​            是不是看起来很抽象,无法理解?</p>
-<p>​            但如果我让你解这样一个方程呢</p>
-<script type="math/tex; mode=display">
-\begin{cases}4x+3y=23 \\ 2x+y=9\end{cases}</script><p>​            解为</p>
-<script type="math/tex; mode=display">
-\begin{cases}x=2 \\ y=5\end{cases}</script><p>​            发现什么了么</p>
-<p>​            第一个矩阵可以表示该方程的<strong>各系数</strong>,第二个可以代表<strong>参数</strong>,第三个可以看作<strong>解</strong></p>
-<p>​            当然,这只是一种比较简洁的记忆方法.其他的理解方法还有很多,留作读者读后思考(划掉</p>
-<p>​        有了这些基本知识我们就可以进行我们的主题了——矩阵快速幂</p>
-<p>​    <strong>1.2</strong>矩阵快速幂</p>
-<p>​        矩阵快速幂,即给你一个$n\times n$的矩阵$A$,求$A^n$</p>
-<p>​        为什么一定要是一个<strong>正方形矩阵</strong>呢</p>
-<p>​        因为只有当两个矩阵行数等于另一个的列数时才能乘,故自乘必须得是一个<strong>正方形矩阵</strong></p>
-<p>​        其实矩阵快速幂与普通快速幂没什么区别,只是把$\times$换成了一个函数<strong>mat_mul</strong>(矩阵乘法)</p>
-<p>​        代码如下</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">long</span> <span class="keyword">long</span> mod=<span class="number">1000000007</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">mat</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> m[<span class="number">105</span>][<span class="number">105</span>];</span><br><span class="line">&#125;a,e,ans;</span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> p,n;</span><br><span class="line"></span><br><span class="line"><span class="function">mat <span class="title">multi</span><span class="params">(mat a,mat b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	mat c;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">			c.m[i][j]=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">1</span>;k&lt;=n;k++)</span><br><span class="line">				c.m[i][j]=c.m[i][j]%mod+a.m[i][k]*b.m[k][j]%mod;</span><br><span class="line">	<span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">mat <span class="title">ksm</span><span class="params">(mat x,<span class="keyword">long</span> <span class="keyword">long</span> p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	mat res=e;</span><br><span class="line">	<span class="keyword">while</span>(p)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(p&amp;<span class="number">1</span>)</span><br><span class="line">			res=multi(res,a);</span><br><span class="line">		a=multi(a,a);</span><br><span class="line">		p&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;p;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;a.m[i][j];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		e.m[i][i]=<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	ans=ksm(a,p);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;ans.m[i][j]%mod&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/25/Exgcd/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="BC_driver">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BC_driver's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/25/Exgcd/" class="post-title-link" itemprop="url">Exgcd</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-12-25 22:30:45" itemprop="dateCreated datePublished" datetime="2019-12-25T22:30:45+08:00">2019-12-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-26 11:41:21" itemprop="dateModified" datetime="2019-12-26T11:41:21+08:00">2019-12-26</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Exgcd—扩展欧几里得算法<br>用来求一组$(x,y)$使</p>
-<script type="math/tex; mode=display">
-ax+by=gcd(a,b)</script><p>我们不难发现</p>
-<script type="math/tex; mode=display">
-gcd(a,b)=gcd(b,a\quad mod\quad b)</script><script type="math/tex; mode=display">
-a\quad mod\quad b=a-\lfloor \frac{a}{b} \rfloor b</script><p>设一组$(x_1,y_1)$使得</p>
-<script type="math/tex; mode=display">
-bx_1+(a\quad mod\quad b)y_1=gcd(b,a \quad mod \quad b)</script><p>由上式可得</p>
-<script type="math/tex; mode=display">
-ax+by=bx_1+(a\quad mod\quad b)y_1</script><p>整理可得</p>
-<script type="math/tex; mode=display">
-ax+by=ay_1+b(x_1-\lfloor \frac {a}{b} \rfloor y_1)</script><p>会发现一组特解</p>
-<script type="math/tex; mode=display">
-\begin{cases} x=y_1\\ y=x_1-\lfloor \frac {a}{b} \rfloor y_1 \end {cases}</script><p>将$x_1,y_1$代回原方程可得</p>
-<script type="math/tex; mode=display">
-\begin{cases} x_1=y_2\\ y_1=x_2-\lfloor \frac {a}{b} \rfloor y_2 \end {cases}</script><p>发现这是一个递归式</p>
-<p>那么边界条件是什么呢?</p>
-<p>显然当$a=nb(n\in N^+)$时$a mod b=0$即$y=0$</p>
-<p>此时有</p>
-<script type="math/tex; mode=display">
-ax+0=gcd(a,0)</script><p>因为$gcd(a,0)=a$</p>
-<p>故此时我们得到一组解</p>
-<script type="math/tex; mode=display">
-\begin {cases} x=1 \\ y \in R \end {cases}</script><p>将结果返回即可</p>
-<p>代码如下</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> x,y;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Exgcd</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(b==<span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        x=<span class="number">1</span>;</span><br><span class="line">        y=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    Exgcd(b,a%b);</span><br><span class="line">    temp=x;</span><br><span class="line">    x=y;</span><br><span class="line">    y=temp-(a\b)y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/12/28/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/" rel="prev" title="Matrix fast power">
+      <i class="fa fa-chevron-left"></i> Matrix fast power
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/21/hello/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="BC_driver">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BC_driver's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/21/hello/" class="post-title-link" itemprop="url">第一个博客</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2019-12-21 17:17:22 / Modified: 18:45:30" itemprop="dateCreated datePublished" datetime="2019-12-21T17:17:22+08:00">2019-12-21</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h5 id="以后这个博客就会更新点题解之类的东西"><a href="#以后这个博客就会更新点题解之类的东西" class="headerlink" title="以后这个博客就会更新点题解之类的东西."></a>以后这个博客就会更新点题解之类的东西.</h5>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
   </article>
   
   
   
 
   </div>
-
-  
-
 
 
           </div>
