@@ -46,15 +46,17 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="BC_driver&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="最长不上升子序列与最长公共子序列">
+<meta property="og:url" content="http://yoursite.com/2020/01/24/LIS/index.html">
 <meta property="og:site_name" content="BC_driver&#39;s Blog">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-01-24T02:17:28.000Z">
+<meta property="article:modified_time" content="2020-01-24T02:20:37.304Z">
 <meta property="article:author" content="BC_driver">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/archives/2020/">
+<link rel="canonical" href="http://yoursite.com/2020/01/24/LIS/">
 
 
 <script id="page-configurations">
@@ -62,11 +64,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false
+    isPost: true
   };
 </script>
 
-  <title>Archive | BC_driver's Blog</title>
+  <title>最长不上升子序列与最长公共子序列 | BC_driver's Blog</title>
   
 
 
@@ -171,69 +173,77 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 6 posts in total. Keep on posting.</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/24/LIS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="BC_driver">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BC_driver's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          最长不上升子序列与最长公共子序列
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-01-24 10:17:28 / Modified: 10:20:37" itemprop="dateCreated datePublished" datetime="2020-01-24T10:17:28+08:00">2020-01-24</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2020</h1>
+        
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-24T10:17:28+08:00"
-              content="2020-01-24">
-          01-24
-        </time>
-      </div>
+      <footer class="post-footer">
 
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/01/24/LIS/" itemprop="url">
-            <span itemprop="name">最长不上升子序列与最长公共子序列</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-24T10:03:13+08:00"
-              content="2020-01-24">
-          01-24
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/01/24/P1004/" itemprop="url">
-            <span itemprop="name">P1004 方格取数</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
+        
 
 
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/01/24/P1004/" rel="prev" title="P1004 方格取数">
+      <i class="fa fa-chevron-left"></i> P1004 方格取数
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
@@ -389,6 +399,54 @@
   
 
   
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
 
   
 
