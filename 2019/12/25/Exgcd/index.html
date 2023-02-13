@@ -19,23 +19,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"bc-driver.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"بحث...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="BCBlog">
-<meta property="og:url" content="https://bc-driver.github.io/archives/index.html">
+    <meta name="description" content="Exgcd–扩展欧几里得算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Exgcd">
+<meta property="og:url" content="https://bc-driver.github.io/2019/12/25/Exgcd/index.html">
 <meta property="og:site_name" content="BCBlog">
+<meta property="og:description" content="Exgcd–扩展欧几里得算法">
 <meta property="og:locale">
+<meta property="article:published_time" content="2019-12-25T14:30:45.000Z">
+<meta property="article:modified_time" content="2020-01-24T02:19:37.728Z">
 <meta property="article:author" content="BCDriver">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://bc-driver.github.io/archives/">
+<link rel="canonical" href="https://bc-driver.github.io/2019/12/25/Exgcd/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-Hans","comments":"","permalink":"","path":"archives/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-Hans","comments":true,"permalink":"https://bc-driver.github.io/2019/12/25/Exgcd/","path":"2019/12/25/Exgcd/","title":"Exgcd"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>الأرشيف | BCBlog</title>
+<title>Exgcd | BCBlog</title>
   
 
 
@@ -68,7 +72,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">BCBlog</h1>
+      <p class="site-title">BCBlog</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">Be greater</p>
@@ -141,175 +145,110 @@
 
     </div>
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <span class="collection-header">هِم..! 7 مقالاً بالمُجمل. واصل الكتابة.</span>
-      </div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2023</span>
-    </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://bc-driver.github.io/2019/12/25/Exgcd/">
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-02-11T15:07:49+08:00"
-              content="2023-02-11">
-          02-11
-        </time>
-      </div>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="BCDriver">
+    </span>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2023/02/11/%E7%BD%91%E7%BB%9C%E6%B5%81%E4%B9%8B%E6%9C%80%E5%A4%A7%E6%B5%81%E9%97%AE%E9%A2%98/" itemprop="url">
-            <span itemprop="name">网络流之最大流问题</span>
-          </a>
-      </div>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BCBlog">
+      <meta itemprop="description" content="">
+    </span>
 
-      
-    </header>
-  </article>
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
-    </div>
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Exgcd | BCBlog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Exgcd
+        </h1>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-01-24T10:17:28+08:00"
-              content="2020-01-24">
-          01-24
-        </time>
-      </div>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">نُشر في</span>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/01/24/LIS/" itemprop="url">
-            <span itemprop="name">最长不上升子序列与最长公共子序列</span>
-          </a>
-      </div>
+      <time title="أُنشأ: 2019-12-25 22:30:45" itemprop="dateCreated datePublished" datetime="2019-12-25T22:30:45+08:00">2019-12-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">عُدل في</span>
+      <time title="عُدل: 2020-01-24 10:19:37" itemprop="dateModified" datetime="2020-01-24T10:19:37+08:00">2020-01-24</time>
+    </span>
 
-      
-    </header>
-  </article>
+  
+</div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-01-24T10:03:13+08:00"
-              content="2020-01-24">
-          01-24
-        </time>
-      </div>
+        </div>
+      </header>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/01/24/P1004/" itemprop="url">
-            <span itemprop="name">P1004 方格取数</span>
-          </a>
-      </div>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>Exgcd–扩展欧几里得算法</p>
+<span id="more"></span>
 
-      
-    </header>
-  </article>
-    <div class="collection-year">
-      <span class="collection-header">2019</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2019-12-31T17:21:18+08:00"
-              content="2019-12-31">
-          12-31
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/12/31/%E7%9F%A9%E9%98%B5%E5%8A%A0%E9%80%9F/" itemprop="url">
-            <span itemprop="name">矩阵加速</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2019-12-28T19:40:48+08:00"
-              content="2019-12-28">
-          12-28
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/12/28/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/" itemprop="url">
-            <span itemprop="name">Matrix fast power</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2019-12-25T22:30:45+08:00"
-              content="2019-12-25">
-          12-25
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/12/25/Exgcd/" itemprop="url">
-            <span itemprop="name">Exgcd</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2019-12-21T17:17:22+08:00"
-              content="2019-12-21">
-          12-21
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/12/21/hello/" itemprop="url">
-            <span itemprop="name">第一个博客</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
+<p>用来求一组$(x,y)$使<br>$$<br>ax+by&#x3D;gcd(a,b)<br>$$<br>我们不难发现<br>$$<br>gcd(a,b)&#x3D;gcd(b,a\quad mod\quad b)<br>$$<br>$$<br>a\quad mod\quad b&#x3D;a-\lfloor \frac{a}{b} \rfloor b<br>$$</p>
+<p>设一组$(x_1,y_1)$使得<br>$$<br>bx_1+(a\quad mod\quad b)y_1&#x3D;gcd(b,a \quad mod \quad b)<br>$$</p>
+<p>由上式可得<br>$$<br>ax+by&#x3D;bx_1+(a\quad mod\quad b)y_1<br>$$<br>整理可得<br>$$<br>ax+by&#x3D;ay_1+b(x_1-\lfloor \frac {a}{b} \rfloor y_1)<br>$$<br>会发现一组特解<br>$$<br>\begin{cases} x&#x3D;y_1\ y&#x3D;x_1-\lfloor \frac {a}{b} \rfloor y_1 \end {cases}<br>$$<br>将$x_1,y_1$代回原方程可得<br>$$<br>\begin{cases} x_1&#x3D;y_2\ y_1&#x3D;x_2-\lfloor \frac {a}{b} \rfloor y_2 \end {cases}<br>$$<br>发现这是一个递归式</p>
+<p>那么边界条件是什么呢?</p>
+<p>显然当$a&#x3D;nb(n\in N^+)$时$a mod b&#x3D;0$即$y&#x3D;0$</p>
+<p>此时有<br>$$<br>ax+0&#x3D;gcd(a,0)<br>$$<br>因为$gcd(a,0)&#x3D;a$</p>
+<p>故此时我们得到一组解<br>$$<br>\begin {cases} x&#x3D;1 \ y \in R \end {cases}<br>$$<br>将结果返回即可</p>
+<p>代码如下</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x,y;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Exgcd</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(b==<span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        x=<span class="number">1</span>;</span><br><span class="line">        y=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">Exgcd</span>(b,a%b);</span><br><span class="line">    temp=x;</span><br><span class="line">    x=y;</span><br><span class="line">    y=temp-(a\b)y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
     </div>
-  </div>
-  
-  
-  
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/12/21/hello/" rel="prev" title="第一个博客">
+                  <i class="fa fa-chevron-left"></i> 第一个博客
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/12/28/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/" rel="next" title="Matrix fast power">
+                  Matrix fast power <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
 
 </div>
   </main>

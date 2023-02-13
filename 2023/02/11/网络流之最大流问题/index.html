@@ -19,23 +19,32 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"bc-driver.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"بحث...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="BCBlog">
-<meta property="og:url" content="https://bc-driver.github.io/index.html">
+    <meta name="description" content="网络流之最大流问题 - 徐子睿1 算法的引入UNIX插座有 n 个插座，m 个设备和 k (n,m,k≤100) 种转换器，每种转换器有无限多。已知每个插座的类型，每个设备的插头类型，以及每种转换器的插座类型和插头类型。插头和插座类型都用不超过 24 个字母表示，插座只能插到类型名称相同的插座中。 例如，有 4 个插座，类型分别为 A，B，C，D；有 5 个设备，插头类型分别为 B，C，B，B，X">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络流之最大流问题">
+<meta property="og:url" content="https://bc-driver.github.io/2023/02/11/%E7%BD%91%E7%BB%9C%E6%B5%81%E4%B9%8B%E6%9C%80%E5%A4%A7%E6%B5%81%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="BCBlog">
+<meta property="og:description" content="网络流之最大流问题 - 徐子睿1 算法的引入UNIX插座有 n 个插座，m 个设备和 k (n,m,k≤100) 种转换器，每种转换器有无限多。已知每个插座的类型，每个设备的插头类型，以及每种转换器的插座类型和插头类型。插头和插座类型都用不超过 24 个字母表示，插座只能插到类型名称相同的插座中。 例如，有 4 个插座，类型分别为 A，B，C，D；有 5 个设备，插头类型分别为 B，C，B，B，X">
 <meta property="og:locale">
+<meta property="og:image" content="https://i.328888.xyz/2023/01/16/2gBMC.png">
+<meta property="og:image" content="https://i.328888.xyz/2023/01/17/2PfwL.png">
+<meta property="og:image" content="https://i.328888.xyz/2023/01/17/2L1VZ.png">
+<meta property="og:image" content="https://i.328888.xyz/2023/01/17/2aatE.jpeg">
+<meta property="article:published_time" content="2023-02-11T07:07:49.106Z">
+<meta property="article:modified_time" content="2023-02-13T11:57:13.469Z">
 <meta property="article:author" content="BCDriver">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.328888.xyz/2023/01/16/2gBMC.png">
 
 
-<link rel="canonical" href="https://bc-driver.github.io/">
+<link rel="canonical" href="https://bc-driver.github.io/2023/02/11/%E7%BD%91%E7%BB%9C%E6%B5%81%E4%B9%8B%E6%9C%80%E5%A4%A7%E6%B5%81%E9%97%AE%E9%A2%98/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-Hans","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-Hans","comments":true,"permalink":"https://bc-driver.github.io/2023/02/11/%E7%BD%91%E7%BB%9C%E6%B5%81%E4%B9%8B%E6%9C%80%E5%A4%A7%E6%B5%81%E9%97%AE%E9%A2%98/","path":"2023/02/11/网络流之最大流问题/","title":"网络流之最大流问题"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>BCBlog</title>
+<title>网络流之最大流问题 | BCBlog</title>
   
 
 
@@ -68,7 +77,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">BCBlog</h1>
+      <p class="site-title">BCBlog</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">Be greater</p>
@@ -95,7 +104,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           المحتويات
@@ -108,6 +117,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E6%B5%81%E4%B9%8B%E6%9C%80%E5%A4%A7%E6%B5%81%E9%97%AE%E9%A2%98-%E5%BE%90%E5%AD%90%E7%9D%BF"><span class="nav-number">1.</span> <span class="nav-text">网络流之最大流问题 - 徐子睿</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E7%AE%97%E6%B3%95%E7%9A%84%E5%BC%95%E5%85%A5"><span class="nav-number">2.</span> <span class="nav-text">1 算法的引入</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#UNIX%E6%8F%92%E5%BA%A7"><span class="nav-number">2.1.</span> <span class="nav-text">UNIX插座</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E5%88%86%E6%9E%90"><span class="nav-number">2.2.</span> <span class="nav-text">题目分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-1-%E7%BD%91%E7%BB%9C%E6%B5%81"><span class="nav-number">3.</span> <span class="nav-text">2.1 网络流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-2-%E6%9C%80%E5%A4%A7%E6%B5%81%E9%97%AE%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">2.2 最大流问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-1Edmonds-Karp%E7%AE%97%E6%B3%95"><span class="nav-number">4.1.</span> <span class="nav-text">2.2.1Edmonds-Karp算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-2-Dinic%E7%AE%97%E6%B3%95"><span class="nav-number">4.2.</span> <span class="nav-text">2.2.2 Dinic算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E5%BC%95%E5%85%A5%E9%A2%98%E7%9A%84%E8%A7%A3%E7%AD%94"><span class="nav-number">5.</span> <span class="nav-text">3 引入题的解答</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E4%BE%8B%E9%A2%98"><span class="nav-number">6.</span> <span class="nav-text">4 例题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#UVA11082-%E7%9F%A9%E9%98%B5%E8%A7%A3%E5%8E%8B-Matrix-Decompressing"><span class="nav-number">6.1.</span> <span class="nav-text">UVA11082 矩阵解压 Matrix Decompressing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E5%88%86%E6%9E%90-1"><span class="nav-number">6.2.</span> <span class="nav-text">题目分析</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -141,16 +151,17 @@
 
     </div>
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://bc-driver.github.io/2023/02/11/%E7%BD%91%E7%BB%9C%E6%B5%81%E4%B9%8B%E6%9C%80%E5%A4%A7%E6%B5%81%E9%97%AE%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -164,13 +175,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | BCBlog">
+      <meta itemprop="name" content="网络流之最大流问题 | BCBlog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/02/11/%E7%BD%91%E7%BB%9C%E6%B5%81%E4%B9%8B%E6%9C%80%E5%A4%A7%E6%B5%81%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">网络流之最大流问题</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          网络流之最大流问题
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -200,7 +211,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="网络流之最大流问题-徐子睿"><a href="#网络流之最大流问题-徐子睿" class="headerlink" title="网络流之最大流问题 - 徐子睿"></a>网络流之最大流问题 - 徐子睿</h1><h1 id="1-算法的引入"><a href="#1-算法的引入" class="headerlink" title="1 算法的引入"></a>1 算法的引入</h1><h2 id="UNIX插座"><a href="#UNIX插座" class="headerlink" title="UNIX插座"></a>UNIX插座</h2><p>有 n 个插座，m 个设备和 k (n,m,k≤100) 种转换器，每种转换器有无限多。已知每个插座的类型，每个设备的插头类型，以及每种转换器的插座类型和插头类型。插头和插座类型都用不超过 24 个字母表示，插座只能插到类型名称相同的插座中。 例如，有 4 个插座，类型分别为 A，B，C，D；有 5 个设备，插头类型分别为 B，C，B，B，X；还有三种转换器，分别是 B-&gt;X，X-&gt;A 和 X-&gt;D。这里用 B -&gt; X 表示插座类型为 B，插头类型为 X，因此一个插座类型为 B 的设备插上这种转换器之后就 “变成” 了一个插头类型为 X 的设备。转换器可以级联使用，例如插头类型为 A 的设备依次接上 A-&gt;B, B-&gt;C, C-&gt;D 这 3 个转换器之后会 “变成” 插头类型为 D 的设备。 要求插的设备尽量多。问最少剩几个不匹配的设备。</p>
+        <h1 id="网络流之最大流问题-徐子睿"><a href="#网络流之最大流问题-徐子睿" class="headerlink" title="网络流之最大流问题 - 徐子睿"></a>网络流之最大流问题 - 徐子睿</h1><h1 id="1-算法的引入"><a href="#1-算法的引入" class="headerlink" title="1 算法的引入"></a>1 算法的引入</h1><h2 id="UNIX插座"><a href="#UNIX插座" class="headerlink" title="UNIX插座"></a>UNIX插座</h2><p>有 n 个插座，m 个设备和 k (n,m,k≤100) 种转换器，每种转换器有无限多。已知每个插座的类型，每个设备的插头类型，以及每种转换器的插座类型和插头类型。插头和插座类型都用不超过 24 个字母表示，插座只能插到类型名称相同的插座中。 例如，有 4 个插座，类型分别为 A，B，C，D；有 5 个设备，插头类型分别为 B，C，B，B，X；还有三种转换器，分别是 B-&gt;X，X-&gt;A 和 X-&gt;D。这里用 B -&gt; X 表示插座类型为 B，插头类型为 X，因此一个插座类型为 B 的设备插上这种转换器之后就 “变成” 了一个插头类型为 X 的设备。转换器可以级联使用，例如插头类型为 A 的设备依次接上 A-&gt;B, B-&gt;C, C-&gt;D 这 3 个转换器之后会 “变成” 插头类型为 D 的设备。 要求插的设备尽量多。问最少剩几个不匹配的设备。</p>
 <h2 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h2><p>题目中提到每种转换器都有无限多个，所以我们可以预处理出每个插头可以转换出的插头类型。<br><br>这部分的预处理，考虑到 n,m,k≤100 ，即使所有的插头、设备、转换器都不同最多也只可能有400种不同的名字（而这种情况显然是无解的），我们可以用Floyd算法算出转换器之间的传递闭包来处理转换器之间的可转换关系 <br><br>接下来的问题就是如何<strong>分配</strong>各个插头（可能是转换后的）<br><br>而这就需要我们下面的模型——网络流。它就是专门来处理<strong>分配问题</strong>的模型</p>
 <h1 id="2-1-网络流"><a href="#2-1-网络流" class="headerlink" title="2.1 网络流"></a>2.1 网络流</h1><p>在一个有向图上选择一个源点，一个汇点，每一条边上都有一个流量上限（以下称为容量），即经过这条边的流量不能超过这个上界，同时，除源点和汇点外，所有点的入流和出流都相等，而源点只有流出的流，汇点只有汇入的流。这样的图叫做网络流。</p>
 <blockquote>
@@ -291,7 +302,6 @@
 </ol>
 <p>代码<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">unsigned</span> <span class="type">long</span> <span class="type">long</span> ull;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> KASE, T;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">edge</span>&#123;</span><br><span class="line">    <span class="type">int</span> u, v, c, f;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Dinic</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    </span><br><span class="line">    vector &lt;edge&gt; edges;</span><br><span class="line">    vector &lt;<span class="type">int</span>&gt; g[maxn];</span><br><span class="line">    <span class="type">int</span> level[maxn] = &#123;<span class="number">0</span>&#125;, cur[maxn] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="type">int</span> res = <span class="number">0</span>, n = <span class="number">0</span>;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> inf = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">addedge</span><span class="params">(<span class="type">int</span> u, <span class="type">int</span> v, <span class="type">int</span> c)</span></span>&#123;</span><br><span class="line">        edges.<span class="built_in">push_back</span>((edge)&#123;u, v, c, <span class="number">0</span>&#125;);</span><br><span class="line">        edges.<span class="built_in">push_back</span>((edge)&#123;v, u, <span class="number">0</span>, <span class="number">0</span>&#125;);</span><br><span class="line">        <span class="type">int</span> i = edges.<span class="built_in">size</span>();</span><br><span class="line">        g[u].<span class="built_in">push_back</span>(i - <span class="number">2</span>);</span><br><span class="line">        g[v].<span class="built_in">push_back</span>(i - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">BFS</span><span class="params">(<span class="type">int</span> s, <span class="type">int</span> t)</span></span>&#123;</span><br><span class="line">        <span class="built_in">memset</span>(level, <span class="number">0</span>, <span class="built_in">sizeof</span>(level));</span><br><span class="line">        queue &lt;<span class="type">int</span>&gt; q;</span><br><span class="line">        q.<span class="built_in">push</span>(s);</span><br><span class="line">        level[s] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(!q.<span class="built_in">empty</span>())&#123;</span><br><span class="line">            <span class="type">int</span> u = q.<span class="built_in">front</span>(); q.<span class="built_in">pop</span>();</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">auto</span> i : g[u])&#123;</span><br><span class="line">                edge &amp;e = edges[i];</span><br><span class="line">                <span class="keyword">if</span>(e.c &gt; e.f &amp;&amp; level[e.v] == <span class="number">0</span>)&#123;</span><br><span class="line">                    level[e.v] = level[e.u] + <span class="number">1</span>;</span><br><span class="line">                    q.<span class="built_in">push</span>(e.v);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(!level[t]) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125; </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">DFS</span><span class="params">(<span class="type">int</span> u, <span class="type">int</span> adv, <span class="type">int</span> t)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(u == t) <span class="keyword">return</span> adv;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> i : g[u])&#123;</span><br><span class="line">            edge &amp;e = edges[i], &amp;einv = edges[i ^ <span class="number">1</span>];</span><br><span class="line">            <span class="keyword">if</span>(level[e.v] == level[e.u] + <span class="number">1</span> &amp;&amp; e.c &gt; e.f)&#123;</span><br><span class="line">                <span class="type">int</span> res = <span class="built_in">DFS</span>(e.v, <span class="built_in">min</span>(adv, e.c - e.f), t);</span><br><span class="line">                <span class="keyword">if</span>(res &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                    e.f += res;</span><br><span class="line">                    einv.f -= res;</span><br><span class="line">                    <span class="keyword">return</span> res;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxFlow</span><span class="params">(<span class="type">int</span> s, <span class="type">int</span> t)</span></span>&#123;</span><br><span class="line">        <span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(<span class="built_in">BFS</span>(s, t))&#123;</span><br><span class="line">            <span class="keyword">while</span>(<span class="type">int</span> adv = <span class="built_in">DFS</span>(s, inf, t))&#123;</span><br><span class="line">                res += adv;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> R, C;</span><br><span class="line">    cin&gt;&gt;R&gt;&gt;C;</span><br><span class="line">    <span class="type">int</span> rowsum[maxn] = &#123;<span class="number">0</span>&#125;, colsum[maxn] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= R;i++) cin&gt;&gt;rowsum[i];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = R;i &gt;= <span class="number">1</span>;i--) rowsum[i] -= (rowsum[i - <span class="number">1</span>] + C);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= C;i++) cin&gt;&gt;colsum[i];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = C;i &gt;= <span class="number">1</span>;i--) colsum[i] -= (colsum[i - <span class="number">1</span>] + R);</span><br><span class="line">    Dinic D;</span><br><span class="line">    <span class="type">int</span> s = R + C + <span class="number">1</span>, t = R + C + <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= R;i++)&#123;</span><br><span class="line">        D.<span class="built_in">addedge</span>(s, i, rowsum[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= C;i++)&#123;</span><br><span class="line">        D.<span class="built_in">addedge</span>(i + R, t, colsum[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= R;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>;j &lt;= C;j++)&#123;</span><br><span class="line">            D.<span class="built_in">addedge</span>(i, j + R, <span class="number">19</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    D.<span class="built_in">maxFlow</span>(s, t);</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;Matrix &quot;</span>&lt;&lt;T - KASE + <span class="number">1</span>&lt;&lt;<span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= R;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>;j &lt;= C;j++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">auto</span> k : D.g[i])&#123;</span><br><span class="line">                <span class="keyword">if</span>(D.edges[k].v == j + R)&#123;</span><br><span class="line">                    cout&lt;&lt;D.edges[k].f + <span class="number">1</span>&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>);cin.<span class="built_in">tie</span>(<span class="number">0</span>);cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    cin&gt;&gt;KASE;</span><br><span class="line">    T = KASE;</span><br><span class="line">    <span class="keyword">while</span>(KASE)&#123;</span><br><span class="line">        <span class="built_in">solve</span>();</span><br><span class="line">        <span class="keyword">if</span>(KASE--) cout&lt;&lt;<span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
-      
     </div>
 
     
@@ -299,478 +309,22 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
 
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://bc-driver.github.io/2020/01/24/LIS/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="BCDriver">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BCBlog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | BCBlog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/01/24/LIS/" class="post-title-link" itemprop="url">最长不上升子序列与最长公共子序列</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">نُشر في</span>
-      
-
-      <time title="أُنشأ: 2020-01-24 10:17:28 / عُدل: 10:20:37" itemprop="dateCreated datePublished" datetime="2020-01-24T10:17:28+08:00">2020-01-24</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://bc-driver.github.io/2020/01/24/P1004/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="BCDriver">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BCBlog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | BCBlog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/01/24/P1004/" class="post-title-link" itemprop="url">P1004 方格取数</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">نُشر في</span>
-      
-
-      <time title="أُنشأ: 2020-01-24 10:03:13 / عُدل: 10:18:10" itemprop="dateCreated datePublished" datetime="2020-01-24T10:03:13+08:00">2020-01-24</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>题目:<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1004">P1004 方格取数</a></p>
-<p>一个死亡四维dp</p>
-<p>$dp[a][b][c][d]$代表第一个人走到$m[a][b]$第二人走到$m[c][d]$时的最大值</p>
-<p>转移方程如下:</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/01/24/P1004/#more" rel="contents">
-                تابع القراءة &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://bc-driver.github.io/2019/12/31/%E7%9F%A9%E9%98%B5%E5%8A%A0%E9%80%9F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="BCDriver">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BCBlog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | BCBlog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/12/31/%E7%9F%A9%E9%98%B5%E5%8A%A0%E9%80%9F/" class="post-title-link" itemprop="url">矩阵加速</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">نُشر في</span>
-
-      <time title="أُنشأ: 2019-12-31 17:21:18" itemprop="dateCreated datePublished" datetime="2019-12-31T17:21:18+08:00">2019-12-31</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">عُدل في</span>
-      <time title="عُدل: 2020-01-24 10:18:58" itemprop="dateModified" datetime="2020-01-24T10:18:58+08:00">2020-01-24</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>矩阵加速是一种能将复杂度为$\Theta(n)$的递推式加速到$\Theta(k^3logn)$的方法(k为加速矩阵的大小)</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/12/31/%E7%9F%A9%E9%98%B5%E5%8A%A0%E9%80%9F/#more" rel="contents">
-                تابع القراءة &raquo;
-              </a>
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/01/24/LIS/" rel="prev" title="最长不上升子序列与最长公共子序列">
+                  <i class="fa fa-chevron-left"></i> 最长不上升子序列与最长公共子序列
+                </a>
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://bc-driver.github.io/2019/12/28/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="BCDriver">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BCBlog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | BCBlog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/12/28/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/" class="post-title-link" itemprop="url">Matrix fast power</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">نُشر في</span>
-
-      <time title="أُنشأ: 2019-12-28 19:40:48" itemprop="dateCreated datePublished" datetime="2019-12-28T19:40:48+08:00">2019-12-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">عُدل في</span>
-      <time title="عُدل: 2020-01-24 10:19:22" itemprop="dateModified" datetime="2020-01-24T10:19:22+08:00">2020-01-24</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>**1.**矩阵快速幂<br>    <strong>1.1</strong> 矩阵基础<br>        <strong>1.1.1</strong> 矩阵<br>     		在数学中，矩阵（Matrix）是一个按照长方阵列排列的复数或实数集合 ——-百度百科</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/12/28/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/#more" rel="contents">
-                تابع القراءة &raquo;
-              </a>
+            <div class="post-nav-item">
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          </div>
     </footer>
   </article>
 </div>
 
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://bc-driver.github.io/2019/12/25/Exgcd/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="BCDriver">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BCBlog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | BCBlog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/12/25/Exgcd/" class="post-title-link" itemprop="url">Exgcd</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">نُشر في</span>
-
-      <time title="أُنشأ: 2019-12-25 22:30:45" itemprop="dateCreated datePublished" datetime="2019-12-25T22:30:45+08:00">2019-12-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">عُدل في</span>
-      <time title="عُدل: 2020-01-24 10:19:37" itemprop="dateModified" datetime="2020-01-24T10:19:37+08:00">2020-01-24</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Exgcd–扩展欧几里得算法</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/12/25/Exgcd/#more" rel="contents">
-                تابع القراءة &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://bc-driver.github.io/2019/12/21/hello/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="BCDriver">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BCBlog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | BCBlog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/12/21/hello/" class="post-title-link" itemprop="url">第一个博客</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">نُشر في</span>
-      
-
-      <time title="أُنشأ: 2019-12-21 17:17:22 / عُدل: 18:45:30" itemprop="dateCreated datePublished" datetime="2019-12-21T17:17:22+08:00">2019-12-21</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h5 id="以后这个博客就会更新点题解之类的东西"><a href="#以后这个博客就会更新点题解之类的东西" class="headerlink" title="以后这个博客就会更新点题解之类的东西."></a>以后这个博客就会更新点题解之类的东西.</h5>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
 
 
 
